@@ -1,3 +1,4 @@
+// import { createApp } from 'vue'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
@@ -5,11 +6,13 @@ import vuetify from './plugins/vuetify'
 import { loadFonts } from './plugins/webfontloader'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-import VueCookies from 'vue3-cookies'
-// import store from "vue3-storage";
-// import { register } from 'register-service-worker'
+import VueCookie from 'vue3-cookies'
 axios.defaults.withCredentials = true;
 axios.defaults.baseURL = process.env.VUE_APP_API_ENDPOINT
+
+
+// import store from "vue3-storage";
+// import { register } from 'register-service-worker'
 
 // axios.interceptors.response.use(
 //   response => response,
@@ -71,14 +74,14 @@ loadFonts()
 createApp(App)
   .use(VueAxios, axios)
   .use(router)
-  // .use(VueCookies)
-  .use(VueCookies, {
-    expireTimes: "30d",
-    path: "/",
-    domain: "",
-    secure: true,
-    sameSite: "None"
-})
+  .use(VueCookie)
+//   .use(VueCookies, {
+//     expireTimes: "30d",
+//     path: "/",
+//     domain: "",
+//     secure: true,
+//     sameSite: "None"
+// })
   // .use(Vue3Storage, { namespace: "pro_", storage: StorageType.Local })
   .use(vuetify)
   .mount('#app')
