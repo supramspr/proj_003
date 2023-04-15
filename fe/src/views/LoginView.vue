@@ -124,15 +124,15 @@ export default {
     password: null,
     loading: false,
 
-    valid: true,
-    name: "",
-    nameRules: [
-      (v) => !!v || "Name is required",
-      (v) => (v && v.length <= 10) || "Name must be less than 10 characters",
-    ],
-    select: null,
-    items: ["Item 1", "Item 2", "Item 3", "Item 4"],
-    checkbox: false,
+    // valid: true,
+    // name: "",
+    // nameRules: [
+    //   (v) => !!v || "Name is required",
+    //   (v) => (v && v.length <= 10) || "Name must be less than 10 characters",
+    // ],
+    // select: null,
+    // items: ["Item 1", "Item 2", "Item 3", "Item 4"],
+    // checkbox: false,
   }),
 
   methods: {
@@ -162,21 +162,21 @@ export default {
 
       setTimeout(() => (this.loading = false), 2000);
     },
-    required(v) {
-      return !!v || "Field is required";
-    },
+    // required(v) {
+    //   return !!v || "Field is required";
+    // },
 
-    async validate() {
-      const { valid } = await this.$refs.form.validate();
+    // async validate() {
+    //   const { valid } = await this.$refs.form.validate();
 
-      if (valid) alert("Form is valid");
-    },
-    reset() {
-      this.$refs.form.reset();
-    },
-    resetValidation() {
-      this.$refs.form.resetValidation();
-    },
+    //   if (valid) alert("Form is valid");
+    // },
+    // reset() {
+    //   this.$refs.form.reset();
+    // },
+    // resetValidation() {
+    //   this.$refs.form.resetValidation();
+    // },
   },
 };
 </script>
